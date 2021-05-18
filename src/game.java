@@ -1,4 +1,4 @@
-public class game {
+public class game{
     public static void main(String[] args){
         MyFrame frame = new MyFrame();
     }
