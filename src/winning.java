@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ending extends JFrame{
+public class winning extends JFrame{
     JButton exit = new JButton();
     JPanel panel  = new JPanel();
     JLabel label = new JLabel();
-    ending(){
+    winning(){
         ImageIcon image = new ImageIcon("bs.png");
         this.setIconImage(image.getImage());
 
@@ -16,7 +16,7 @@ public class ending extends JFrame{
         this.setSize(400,400);
         this.getContentPane().setBackground(new Color(0,0,0));
 
-        label.setText("~Game Over~");
+        label.setText("CONGRATS!");
         label.setForeground(new Color(0xFF01FF));
         label.setFont(new Font("MV Boli",Font.BOLD,40));
 

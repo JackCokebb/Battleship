@@ -1,11 +1,9 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class battlefield {
     public char[][] board = createBoard('o');
-   
-    
+
     battlefield(){
         ships[] allShips = new ships[5];
         allShips[0]=new ships("Carrier",5,'c');
@@ -30,27 +28,6 @@ public class battlefield {
         }
         return board;
     }
-  /*  public void printBoard(char[][] board){
-        System.out.print(" " + " ");
-        for (int i =0;i<10;i++){
-            System.out.print((i+1)+" ");
-        }
-        System.out.println();
-        for(int i=0;i<10;i++){
-            System.out.print((i+1)+" ");
-            for(int j=0;j<10;j++){
-                System.out.print(board[i][j] +" ");
-               /* if (board[i][j]=='x')
-                    System.out.print(board[i][j] +" ");
-                else if (board[i][j]=='o')
-                    System.out.print(board[i][j] +" ");
-                else
-                    System.out.print("~"+" ");*/
-           /* }
-            System.out.println();
-        }
-        System.out.println();
-    }*/
 
     public char[][] getBoard(){
         return board;
@@ -101,5 +78,5 @@ public class battlefield {
 
         return board;
     }
-   
+
 }
