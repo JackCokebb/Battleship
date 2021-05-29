@@ -131,8 +131,6 @@ public class server{
                             System.out.println("server start");
                             startCount =0;
 
-
-                           
                             // if 2 players connected to server, randomly choose color of player and send it to each player.
 
                             int a=rnd.nextInt(2);

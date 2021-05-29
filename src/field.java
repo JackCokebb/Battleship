@@ -127,7 +127,6 @@ public class field implements Runnable, ActionListener{
         if(!enable) {
             System.out.println("hit");
             return;}
-        System.out.println("oh");
 
         for (int i=0;i<100;i++){
             if (e.getSource()==buttons1[i]){
@@ -135,6 +134,8 @@ public class field implements Runnable, ActionListener{
                 if(this.level.equals("easy")){
                     String buttonName= ((JButton)e.getSource()).getName();
                     if (!buttonName.equals("o")){
+                    	if(buttons1[i].getText()==buttonName)
+                    		return;
                         buttons1[i].setForeground(new Color(0,0,0));
                         buttons1[i].setText(buttonName);
                         writer.println("[HIT]"+i+" "+buttonName);
@@ -142,28 +143,28 @@ public class field implements Runnable, ActionListener{
                         hitCount++;
                      
                         if(hitCount==17) {
+                        	try{ Thread.sleep(2000); }catch(Exception se){}
                             gameWin();
+                            writer.println("[OVER]");
                         }
 
                     }
                     else{
+                    	if(buttons1[i].getText().equals("o"))
+                    		return;
                         buttons1[i].setForeground(new Color(0,0,225));
                         buttons1[i].setText("o");
                         writer.println("[MISS]"+i);
                         enable=false;
-                        
-                       
-
-                        if (hitCount == 17){
-                            try{ Thread.sleep(2000); }catch(Exception se){}
-                            writer.println("[OVER]");
-                            gameOver();
+                     
                         }
                     }
                 }
                 else if(this.level.equals("hard")){
                     String buttonName= ((JButton)e.getSource()).getName();
                     if (!buttonName.equals("o")){
+                    	if(buttons1[i].getText()==buttonName)
+                    		return;
                         buttons1[i].setForeground(new Color(0,0,0));
                         buttons1[i].setText("x");
                         writer.println("[HIT]"+i+" "+buttonName);
@@ -176,6 +177,8 @@ public class field implements Runnable, ActionListener{
                         }
                     }
                     else{
+                    	if(buttons1[i].getText().equals("o"))
+                    		return;
                         buttons1[i].setForeground(new Color(0,0,225));
                         buttons1[i].setText("o");
                         writer.println("[MISS]"+i);
@@ -186,7 +189,7 @@ public class field implements Runnable, ActionListener{
             }
         }
 
-    }
+    
 
     public void gameOver(){
         frame.dispose();
